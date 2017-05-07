@@ -1,0 +1,204 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .idea\
+* .idea\compiler.xml
+* .idea\copyright\
+* .idea\copyright\profiles_settings.xml
+* .idea\markdown-navigator\
+* .idea\markdown-navigator\profiles_settings.xml
+* .idea\misc.xml
+* .idea\workspace.xml
+* app\
+* app\build.gradle
+* app\libs\
+* app\libs\androidsoft-credits-1.1.0.jar
+* app\libs\androidsoft-utils-1.0.0.jar
+* app\libs\picasso-2.5.2.jar
+* app\src\
+* app\src\main\
+* app\src\main\AndroidManifest.xml
+* app\src\main\java\
+* app\src\main\java\org\
+* app\src\main\java\org\androidsoft\
+* app\src\main\java\org\androidsoft\coloring\
+* app\src\main\java\org\androidsoft\coloring\ui\
+* app\src\main\java\org\androidsoft\coloring\ui\activity\
+* app\src\main\java\org\androidsoft\coloring\ui\activity\AbstractColoringActivity.java
+* app\src\main\java\org\androidsoft\coloring\ui\activity\CreditsActivity.java
+* app\src\main\java\org\androidsoft\coloring\ui\activity\PaintActivity.java
+* app\src\main\java\org\androidsoft\coloring\ui\activity\PaintActivity2.java
+* app\src\main\java\org\androidsoft\coloring\ui\activity\PickColorActivity.java
+* app\src\main\java\org\androidsoft\coloring\ui\activity\SplashActivity.java
+* app\src\main\java\org\androidsoft\coloring\ui\activity\StartNewActivity.java
+* app\src\main\java\org\androidsoft\coloring\ui\activity\StartNewActivity2.java
+* app\src\main\java\org\androidsoft\coloring\ui\widget\
+* app\src\main\java\org\androidsoft\coloring\ui\widget\ColorButton.java
+* app\src\main\java\org\androidsoft\coloring\ui\widget\ColoringButton.java
+* app\src\main\java\org\androidsoft\coloring\ui\widget\ColoringImageButton.java
+* app\src\main\java\org\androidsoft\coloring\ui\widget\PaintView.java
+* app\src\main\java\org\androidsoft\coloring\ui\widget\Progress.java
+* app\src\main\java\org\androidsoft\coloring\util\
+* app\src\main\java\org\androidsoft\coloring\util\DrawUtils.java
+* app\src\main\java\org\androidsoft\coloring\util\FloodFill.java
+* app\src\main\res\
+* app\src\main\res\drawable-hdpi\
+* app\src\main\res\drawable-hdpi\background.jpg
+* app\src\main\res\drawable-hdpi\background_land.jpg
+* app\src\main\res\drawable-hdpi\btnn.9.png
+* app\src\main\res\drawable-hdpi\btnn2.9.png
+* app\src\main\res\drawable-hdpi\btnn3.9.png
+* app\src\main\res\drawable-hdpi\btnnn.xml
+* app\src\main\res\drawable-hdpi\btnnn2.xml
+* app\src\main\res\drawable-hdpi\icon.png
+* app\src\main\res\drawable-hdpi\palette.png
+* app\src\main\res\drawable-hdpi\splash.png
+* app\src\main\res\drawable-ldpi\
+* app\src\main\res\drawable-ldpi\palette.png
+* app\src\main\res\drawable-mdpi\
+* app\src\main\res\drawable-mdpi\color_guide.png
+* app\src\main\res\drawable-mdpi\foutline01_dog.png
+* app\src\main\res\drawable-mdpi\foutline02_bear.png
+* app\src\main\res\drawable-mdpi\foutline03_ballon.png
+* app\src\main\res\drawable-mdpi\foutline04_flower.png
+* app\src\main\res\drawable-mdpi\foutline05_space.png
+* app\src\main\res\drawable-mdpi\fthumb01_dog.png
+* app\src\main\res\drawable-mdpi\fthumb02_bear.png
+* app\src\main\res\drawable-mdpi\fthumb03_ballon.png
+* app\src\main\res\drawable-mdpi\fthumb04_flower.png
+* app\src\main\res\drawable-mdpi\fthumb05_space.png
+* app\src\main\res\drawable-mdpi\outline001_balloons.png
+* app\src\main\res\drawable-mdpi\outline002_spaceship.png
+* app\src\main\res\drawable-mdpi\outline003_horses.png
+* app\src\main\res\drawable-mdpi\outline004_castle.png
+* app\src\main\res\drawable-mdpi\outline005_house.png
+* app\src\main\res\drawable-mdpi\outline006_dino.png
+* app\src\main\res\drawable-mdpi\outline007_flowers.png
+* app\src\main\res\drawable-mdpi\outline008_sealife.png
+* app\src\main\res\drawable-mdpi\outline009_zoo.png
+* app\src\main\res\drawable-mdpi\outline010_roadrunner.png
+* app\src\main\res\drawable-mdpi\outline011_plane.png
+* app\src\main\res\drawable-mdpi\outline012_birthday.png
+* app\src\main\res\drawable-mdpi\outline013_18wheeler.png
+* app\src\main\res\drawable-mdpi\outline014_motorbike.png
+* app\src\main\res\drawable-mdpi\outline015_f15eagle.png
+* app\src\main\res\drawable-mdpi\outline016_beagle.png
+* app\src\main\res\drawable-mdpi\outline017_butterfly.png
+* app\src\main\res\drawable-mdpi\outline018_snail.png
+* app\src\main\res\drawable-mdpi\outline019_helicopter.png
+* app\src\main\res\drawable-mdpi\outline020_bee.png
+* app\src\main\res\drawable-mdpi\outline021_spider.png
+* app\src\main\res\drawable-mdpi\outline022_medeival_city.png
+* app\src\main\res\drawable-mdpi\outline023_outer_space.png
+* app\src\main\res\drawable-mdpi\outline024_world_map.png
+* app\src\main\res\drawable-mdpi\palette.png
+* app\src\main\res\drawable-mdpi\splach_icon.png
+* app\src\main\res\drawable-mdpi\thumb001_balloons.png
+* app\src\main\res\drawable-mdpi\thumb002_spaceship.png
+* app\src\main\res\drawable-mdpi\thumb003_horses.png
+* app\src\main\res\drawable-mdpi\thumb004_castle.png
+* app\src\main\res\drawable-mdpi\thumb005_house.png
+* app\src\main\res\drawable-mdpi\thumb006_dino.png
+* app\src\main\res\drawable-mdpi\thumb007_flowers.png
+* app\src\main\res\drawable-mdpi\thumb008_sealife.png
+* app\src\main\res\drawable-mdpi\thumb009_zoo.png
+* app\src\main\res\drawable-mdpi\thumb010_roadrunner.png
+* app\src\main\res\drawable-mdpi\thumb011_plane.png
+* app\src\main\res\drawable-mdpi\thumb012_birthday.png
+* app\src\main\res\drawable-mdpi\thumb013_18wheeler.png
+* app\src\main\res\drawable-mdpi\thumb014_motorbike.png
+* app\src\main\res\drawable-mdpi\thumb015_f15eagle.png
+* app\src\main\res\drawable-mdpi\thumb016_beagle.png
+* app\src\main\res\drawable-mdpi\thumb017_butterfly.png
+* app\src\main\res\drawable-mdpi\thumb018_snail.png
+* app\src\main\res\drawable-mdpi\thumb019_helicopter.png
+* app\src\main\res\drawable-mdpi\thumb020_bee.png
+* app\src\main\res\drawable-mdpi\thumb021_spider.png
+* app\src\main\res\drawable-mdpi\thumb022_medeival_city.png
+* app\src\main\res\drawable-mdpi\thumb023_outer_space.png
+* app\src\main\res\drawable-mdpi\thumb024_world_map.png
+* app\src\main\res\layout\
+* app\src\main\res\layout\paint.xml
+* app\src\main\res\layout\pick_color.xml
+* app\src\main\res\layout\splash.xml
+* app\src\main\res\layout\start_new.xml
+* app\src\main\res\menu\
+* app\src\main\res\menu\menu_close.xml
+* app\src\main\res\menu\paint_menu.xml
+* app\src\main\res\raw\
+* app\src\main\res\raw\color.sh
+* app\src\main\res\raw\colors.html
+* app\src\main\res\values\
+* app\src\main\res\values\attrs.xml
+* app\src\main\res\values\backgrounds.xml
+* app\src\main\res\values\credits.xml
+* app\src\main\res\values\strings.xml
+* app\src\main\res\values\styles.xml
+* build.gradle
+* gradle\
+* gradle\wrapper\
+* gradle\wrapper\gradle-wrapper.jar
+* gradle\wrapper\gradle-wrapper.properties
+* gradlew
+* gradlew.bat
+* ic_launcher-web.png
+* proguard-project.txt
+* settings.gradle
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:19.1.0
+gson-2.2.4.jar => com.google.code.gson:gson:2.2.4
+
+Potentially Missing Dependency:
+-------------------------------
+When we replaced the following .jar files with a Gradle dependency, we
+inferred the dependency version number from the filename. This
+specific version may not actually be available from the repository.
+If you get a build error stating that the dependency is missing, edit
+the version number to for example "+" to pick up the latest version
+instead. (This may require you to update your code if the library APIs
+have changed.)
+
+gson-2.2.4.jar => version 2.2.4 in com.google.code.gson:gson:2.2.4
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* libs\androidsoft-credits-1.1.0.jar => app\libs\androidsoft-credits-1.1.0.jar
+* libs\androidsoft-utils-1.0.0.jar => app\libs\androidsoft-utils-1.0.0.jar
+* libs\picasso-2.5.2.jar => app\libs\picasso-2.5.2.jar
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
