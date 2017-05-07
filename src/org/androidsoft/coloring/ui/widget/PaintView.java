@@ -1,26 +1,15 @@
-/*
- * Copyright (C) 2010 Peter Dornbach.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+
 package org.androidsoft.coloring.ui.widget;
 
-import org.androidsoft.coloring.util.FloodFill;
-import org.androidsoft.coloring.util.DrawUtils;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Arrays;
+
+import org.androidsoft.coloring.ui.activity.Globals;
+import org.androidsoft.coloring.util.DrawUtils;
+import org.androidsoft.coloring.util.FloodFill;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -30,9 +19,9 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.Handler;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
-import java.io.FileOutputStream;
 
 public class PaintView extends View
 {
@@ -49,6 +38,9 @@ public class PaintView extends View
         super(context, attrs);
         _state = new State();
         _paint = new Paint();
+        
+       // _state._width=333;
+       // _state._height=333;
         
     }
 
@@ -142,6 +134,13 @@ public class PaintView extends View
     public synchronized void saveToFile(File file, Bitmap originalOutlineBitmap,
             Handler progressHandler)
     {
+    	
+    	
+    	//DrawUtils.convertSizeClip(originalOutlineBitmap, originalOutlineBitmap);
+    	
+    	
+    	
+    	
         // Proportion of progress in various places.
         // The sum of all progress should be 100.
         final int PROGRESS_SCAN_PAINTED = 25;
@@ -208,14 +207,21 @@ public class PaintView extends View
         // has more pixels than the bitmap we paint, it has the maximum
         // number of pixels possible with the original outline (while
         // maintaining the same aspect ratio as the drawing).
-        final float aspectRatio = (float) painted.getWidth() / painted.getHeight();
-        int hr = originalOutlineBitmap.getHeight();
-        int wr = (int) (hr * aspectRatio);
-        if (wr > originalOutlineBitmap.getWidth())
-        {
-            wr = originalOutlineBitmap.getWidth();
-            hr = (int) (wr / aspectRatio);
-        }
+       
+       
+       final float aspectRatio = (float) painted.getHeight() / painted.getWidth();
+       
+       //originalOutlineBitmap.getWidth();
+       int wr = originalOutlineBitmap.getWidth();
+       int hr = (int) (wr * aspectRatio);
+       //int hr = originalOutlineBitmap.getWidth();
+       
+       if (hr > originalOutlineBitmap.getHeight())
+       {
+           //wr = originalOutlineBitmap.getWidth();
+           hr = originalOutlineBitmap.getHeight();
+           wr = (int) (hr / aspectRatio);
+       }
         int nr = wr * hr;
         Bitmap result = Bitmap.createBitmap(wr, hr, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(result);
@@ -292,8 +298,10 @@ public class PaintView extends View
         {
             if (_state._width == 0 || _state._height == 0)
             {
-                _state._width = w;
-                _state._height = h;
+            	
+                //_state._width = this.getWidth();
+                _state._height =Globals.actionBarHeight;
+                _state._width=(_state._height*600)/480;
                 if (_lifecycleListener != null)
                 {
                     _lifecycleListener.onPreparedToLoad();

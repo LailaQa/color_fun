@@ -19,7 +19,7 @@ import android.widget.ImageView;
 import org.androidsoft.coloring.R;
 import org.androidsoft.utils.ui.NoTitleActivity;
 
-public class StartNewActivity extends NoTitleActivity implements View.OnClickListener
+public class StartNewActivity2 extends NoTitleActivity implements View.OnClickListener
 {
     // This is an expensive operation.
 
@@ -109,8 +109,8 @@ public class StartNewActivity extends NoTitleActivity implements View.OnClickLis
         {
             return _outlineIds[new Random().nextInt(_outlineIds.length)];
         }
-        private static final String PREFIX_OUTLINE = "foutline";
-        private static final String PREFIX_THUMB = "fthumb";
+        private static final String PREFIX_OUTLINE = "outline";
+        private static final String PREFIX_THUMB = "thumb";
         private Integer[] _thumbIds;
         private Integer[] _outlineIds;
     }
@@ -149,7 +149,7 @@ public class StartNewActivity extends NoTitleActivity implements View.OnClickLis
                 imageView.setLayoutParams(new GridView.LayoutParams(145, 145));
                 imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
                 imageView.setPadding(8, 8, 8, 8);
-                imageView.setOnClickListener(StartNewActivity.this);
+                imageView.setOnClickListener(StartNewActivity2.this);
             }
             else
             {

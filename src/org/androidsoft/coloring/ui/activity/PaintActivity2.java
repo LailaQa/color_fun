@@ -22,32 +22,26 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Rect;
 import android.media.MediaScannerConnection;
 import android.media.MediaScannerConnection.MediaScannerConnectionClient;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore.Images;
-import android.util.DisplayMetrics;
-import android.util.TypedValue;
-import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
+public class PaintActivity2 extends AbstractColoringActivity implements PaintView.LifecycleListener {
 
-
-public class PaintActivity extends AbstractColoringActivity implements PaintView.LifecycleListener {
-
+	ImageView imageView1;
 	public static final String FILE_BACKUP = "backup";
 
-	public PaintActivity() {
+	public PaintActivity2() {
 		_state = new State();
 	}
 
@@ -56,6 +50,8 @@ public class PaintActivity extends AbstractColoringActivity implements PaintView
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.paint);
+		imageView1= (ImageView)findViewById(R.id.imageView1);
+		imageView1.setVisibility(View.GONE);
 		_paintView = (PaintView) findViewById(R.id.paint_view);
 		_paintView.setLifecycleListener(this);
 		_progressBar = (ProgressBar) findViewById(R.id.paint_progress);
@@ -64,9 +60,6 @@ public class PaintActivity extends AbstractColoringActivity implements PaintView
 		View pickColorsButton = findViewById(R.id.pick_color_button);
 		pickColorsButton.setOnClickListener(new PickColorListener());
 
-		
-		
-    	
 		final Object previousState = getLastNonConfigurationInstance();
 		if (previousState == null) {
 			// No previous state, this is truly a new activity.
@@ -89,9 +82,6 @@ public class PaintActivity extends AbstractColoringActivity implements PaintView
 		}
 	}
 
-	
-	
-	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.paint_menu, menu);
@@ -105,7 +95,7 @@ public class PaintActivity extends AbstractColoringActivity implements PaintView
 
 			@Override
 			public void handleMessage(Message m) {
-				new InitPaintView(StartNewActivity.randomOutlineId());
+				new InitPaintView(StartNewActivity2.randomOutlineId());
 			}
 		}.sendEmptyMessage(0);
 	}
@@ -114,7 +104,7 @@ public class PaintActivity extends AbstractColoringActivity implements PaintView
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.open_new:
-			startActivityForResult(new Intent(INTENT_START_NEW), REQUEST_START_NEW);
+			startActivityForResult(new Intent(INTENT_START_NEW2), REQUEST_START_NEW);
 			return true;
 		case R.id.save:
 			new BitmapSaver();
@@ -157,7 +147,7 @@ public class PaintActivity extends AbstractColoringActivity implements PaintView
 	protected Dialog onCreateDialog(int id) {
 		switch (id) {
 		case DIALOG_PROGRESS:
-			_progressDialog = new ProgressDialog(PaintActivity.this);
+			_progressDialog = new ProgressDialog(PaintActivity2.this);
 			_progressDialog.setCancelable(false);
 			_progressDialog.setIcon(android.R.drawable.ic_dialog_info);
 			_progressDialog.setTitle(R.string.dialog_saving);
@@ -290,25 +280,7 @@ public class PaintActivity extends AbstractColoringActivity implements PaintView
 
 			_state._loadInProgress = true;
 			_state._loadedResourceId = outlineResourceId;
-			
-			
-			
-			//Bitmap b = BitmapFactory.decodeResource(getResources(), outlineResourceId);
 			_originalOutlineBitmap = BitmapFactory.decodeResource(getResources(), outlineResourceId);
-			//_originalOutlineBitmap.createScaledBitmap(b, 120, 120, false);
-			
-			//int maxHeight = 20;
-			//int maxWidth = 20;    
-			//float scale = Math.min(((float)maxHeight / _originalOutlineBitmap.getWidth()), ((float)maxWidth / _originalOutlineBitmap.getHeight()));
-
-			//Matrix matrix = new Matrix();
-			//matrix.postScale(scale, scale);
-
-			//_originalOutlineBitmap = Bitmap.createBitmap(_originalOutlineBitmap, 0, 0, _originalOutlineBitmap.getWidth(), _originalOutlineBitmap.getHeight(), matrix, true);
-			
-			
-			
-			
 			_handler = new Handler() {
 
 				@Override
@@ -418,8 +390,6 @@ public class PaintActivity extends AbstractColoringActivity implements PaintView
 				_progressDialog.setTitle(R.string.dialog_saving);
 				_progressDialog.setProgress(0);
 				_originalOutlineBitmap = BitmapFactory.decodeResource(getResources(), _state._loadedResourceId);
-				//_originalOutlineBitmap = Bitmap.createBitmap(1000, 1000, Bitmap.Config.ARGB_8888);
-				//DrawUtils.convertSizeFill(_originalOutlineBitmap,_originalOutlineBitmap);
 				_progressHandler = new ProgressHandler();
 				new Thread(this).start();
 			}
@@ -455,7 +425,7 @@ public class PaintActivity extends AbstractColoringActivity implements PaintView
 
 			// Scan the file so that it appears in the system as it should.
 			if (_newImageUri != null) {
-				new MediaScannerNotifier(PaintActivity.this, _file.toString(), MIME_PNG);
+				new MediaScannerNotifier(PaintActivity2.this, _file.toString(), MIME_PNG);
 			}
 		}
 
